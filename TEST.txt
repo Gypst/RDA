@@ -1,0 +1,129 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <locale.h>
+#include <Windows.h>
+
+using namespace std;
+const int N = 702;				//Количество слов в словаре
+
+char str1[63];			//Первый верный ответ
+char str2[63];			//Первый верный ответ
+int ch1 = 0;
+int ch2 = 0;
+//Функция выдачи слова перед "—" из словаря-файла
+void EngTXT(ifstream &file) {  
+	string str;				//Создаю строку для файла
+	getline(file, str);		//Загоняю туда файл
+	int i = 1;
+	while (str[i] != '—')		//Считаю сколько знаков до "—"
+	{
+		if (str[i] == '\0') {
+			str = ' ';
+			i = 0;
+		}
+		i++;
+	}
+
+
+	for (int g = 0; g < i; g++)		//Вывожу до "—"
+	{
+		cout << str[g];
+	}
+	cout << endl;
+
+	
+	int checknext = 1;
+	int i2 = i+1;
+		while (str[i2] != '~' || str[i2] == ' ')		//Считаю сколько знаков до "~"
+		{
+			if (str[i2] == '\0') {
+				checknext = 0;
+				break;
+			}
+			i2++;
+		}
+
+		int l = 0;
+		for (int g = i + 1; g < i2; g++)
+		{
+			str1[l++] = str[g];
+		}
+		ch1 = i2 - i - 1;			//Длинна верного первого слова
+		str1[ch1] = '\0';			//Очищаю строку от мусора
+		i = i2;
+		i2++;
+		if (checknext == 1)
+		{
+			while (str[i2] != '~' || str[i2] == ' ')		//Считаю сколько знаков до "~"
+			{
+				if (str[i2] == '\0') {
+					checknext = 0;
+					break;
+				}
+				i2++;
+			}
+
+
+			l = 0;
+			for (int g = i + 1; g <= i2; g++)
+			{
+				str2[l++] = str[g];
+			}
+			ch2 = i2 - i - 1;			//Длинна верного второго слова
+			str2[ch2] = '\0';			//Очищаю строку от мусора
+
+
+
+		}
+	
+}   
+
+void CheckAnsw(ifstream &file, string answer) {
+	
+	
+	if (answer == str1 || answer == str2)
+	{
+		cout << "Yep, it's rigth";
+	}
+	else
+	{
+		cout << "Sorry bro, it isn't true";
+	}
+	
+}
+
+
+int main() {
+	SetConsoleCP(1251);// установка кодовой страницы win-cp 1251 в поток ввода
+	SetConsoleOutputCP(1251); // установка кодовой страницы win-cp 1251 в поток вывода
+	
+	string answer;
+
+	ifstream file("dic.txt");		//Файл-словарь 
+	if (!file)						//Проверка на открытие
+	{
+		cout << "Файл не открыт\n\n";
+		return -1;
+	}
+
+	
+	for (int k = 0; k < N; k++)
+	{
+		cout << "Translate this word: ";	//Запрос из словаря
+		EngTXT(file);
+		
+							
+		cin >> answer;						//Ответ пользователя
+		CheckAnsw(file, answer);
+		cout << endl;
+	}
+	
+
+
+	
+
+	file.close();
+	system("pause");
+	return 0;
+}
