@@ -1,0 +1,99 @@
+*{
+margin: 0;
+padding: 0;
+}
+/*html {
+ overflow:  hidden; 
+}*/
+a{
+	text-decoration: none;
+}
+body{
+	height: 5139px;
+
+}
+h1{
+	font-size: 48px;
+}
+header{
+	width: 100%;
+	background: #000;
+	display: flex;
+}
+body {
+	font-size: 18px;
+	font-family: 'Roboto', Sans-serif;
+}
+nav{
+	margin-left: 15%;
+}
+nav ul{
+	margin-top: 70px;
+	margin-left: 53%;
+	margin-right: 14.5%
+}
+button{
+	font-size: 18px;
+}
+.round-btn {
+    border-radius: 25px;
+   }
+.header-logo{
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	margin-top: 55px; 
+	font-size: 36px;
+}
+.nav-fronezone{
+	margin-left: 53.3%
+}
+.thin{
+	font-weight: ;
+}
+.mynav a{
+	color: white;
+	text-align: center;
+
+}
+.font-dronezone{
+	color: 	white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; 
+}
+.nav-dronezone-menu{
+	padding: 10px 35px;
+	font-size: 18px;
+}
+
+.bg-dronezone {
+  background-image: url("img/bg/Layer 4 copy.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  height: 1080px;
+}
+.slogan{
+	font-family: 'Roboto', sans-serif;
+	margin-top: 5%;
+	text-align: center;
+	font-weight: 700;
+	font-size: 48px;
+}
+.slogan-sub{
+	margin-top: 1.5%;
+	text-align: center;
+	color: rgba(255, 255, 255, 0.2);
+	font-size: 18px;
+}
+.div-line{
+	display: inline-block;
+	vertical-align: top;
+}
+@import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+.gradient-text {
+  background: linear-gradient(75deg, #cb0035 , #e06900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #e06900;
+  display: table;
+  margin: 5px auto;
+}
