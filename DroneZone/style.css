@@ -35,6 +35,23 @@ nav ul{
 button{
 	font-size: 18px;
 }
+.item-button{
+	border-radius: 50%; border: 1px solid #1d2f5e; color: #3f4e76;
+}
+.grid{
+	margin-left: 90px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 10px;
+}
+.grid div:nth-child(2){
+	justify-self: end;
+
+}
+.grid div{
+	background-color: 	green;
+}
 .round-btn {
     border-radius: 25px;
    }
@@ -48,7 +65,7 @@ button{
 	margin-left: 53.3%
 }
 .thin{
-	font-weight: ;
+	font-weight: 300 ;
 }
 .mynav a{
 	color: white;
